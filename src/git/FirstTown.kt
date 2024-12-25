@@ -2,6 +2,12 @@ package git
 
 class FirstTown(name: String): Town(name),InfoSity {
 
+    var countOne = 0
+    var countTwo = 0
+    var countThree = 0
+    var countFour = 0
+    var countSum = 0
+
     private val model = listOf(
         "1.Alcatel One Toch - 12000руб.",
         "2.Iphone 4s - 9000руб.",
@@ -14,15 +20,42 @@ class FirstTown(name: String): Town(name),InfoSity {
 
     override fun getChoise() {
         when(readln().toInt()){
-            1 -> println("Куплен телефон: ${model[0]}")
-            2 -> println("Куплен телефон: ${model[1]}")
-            3 -> println("Куплен телефон: ${model[2]}")
-            4 -> println("Куплен телефон: ${model[3]}")
+            1 -> {
+                println("Куплен телефон: ${model[0]}")
+                countOne++
+                countSum += 12000
+            }
+            2 -> {
+                println("Куплен телефон: ${model[1]}")
+                countTwo++
+                countSum += 9000
+            }
+            3 -> {
+                println("Куплен телефон: ${model[2]}")
+                countThree++
+                countSum += 22000
+            }
+            4 -> {
+                println("Куплен телефон: ${model[3]}")
+                countFour++
+                countSum += 15000
+            }
             else -> println("Вы не выбрали модель из списка.Повторите попытку..")
         }
+    }
+
+    override fun getInfoMagazine() {
+        println("Магазин в городе:$name\n" +
+                "Число купленных телефонов:${model[0]}:$countOne\n" +
+                "Число купленных телефонов:${model[1]}:$countTwo\n" +
+                "Число купленных телефонов:${model[2]}:$countThree\n" +
+                "Число купленных телефонов:${model[3]}:$countFour\n" +
+                "Общая сумма покупок:$countSum")
     }
 
     override fun printObjectInfo() {
         println("1.$name")
     }
+
+
 }
