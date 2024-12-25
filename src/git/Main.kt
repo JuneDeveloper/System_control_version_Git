@@ -1,4 +1,4 @@
-package Git
+package git
 
 fun main() {
 
