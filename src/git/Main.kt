@@ -4,18 +4,22 @@ package git
 fun main() {
     val firstTown = FirstTown("Ангарск")
     val secondTown = SecondTown("Иркутск")
-    loop@ do {
+    loop@do {
         println("Приветствуем Вас в приложении покупки смартфона")
         println("Для продолжения работы выберите пункт:\n1.Продолжить\n2.Выход")
         if (readln().toInt() == 2) {
-            break
+            println("Всего доброго!!")
+            break@loop
         } else {
             println("Выберите интересующий Вас пункт меню..")
             firstTown.printObjectInfo()
             secondTown.printObjectInfo()
             println("3.Выход")
             when (readln().toInt()) {
-                3 -> break@loop
+                3 -> {
+                    println("Всего доброго!!")
+                    break@loop
+                }
                 1 -> {
                     if (firstTown.countSum == 0) firstTown.repair()
                     loop@ while (true) {

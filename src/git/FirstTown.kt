@@ -50,7 +50,7 @@ class FirstTown(name: String): Town(name),InfoSity {
                 "${model[1].drop(2).take(9)}:$countTwo\n" +
                 "${model[2].drop(2).take(13)}:$countThree\n" +
                 "${model[3].drop(2).take(10)}:$countFour\n" +
-                "Общая сумма покупок:$countSum")
+                "Общая сумма покупок:$countSum руб.")
     }
 
     override fun printObjectInfo() {
