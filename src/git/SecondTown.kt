@@ -23,6 +23,6 @@ class SecondTown(name: String) : Town(name),InfoSity {
     }
 
     override fun printObjectInfo() {
-        println(name)
+        println("2.$name")
     }
 }
