@@ -56,5 +56,12 @@ class FirstTown(name: String): Town(name),InfoSity {
         println("1.$name")
     }
 
-
+    fun repair(){
+        println("Ваше устройство нуждается в починке?\n1.Да\n2.Нет")
+        if (readln().toInt() == 1){
+            println("Устройство отремонтировано")
+        }else{
+            println("В ремонте не нуждается")
+        }
+    }
 }
