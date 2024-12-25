@@ -45,12 +45,13 @@ class SecondTown(name: String) : Town(name),InfoSity {
     }
 
     override fun getInfoMagazine() {
-        println("Магазин в городе:$name\n" +
-                "Число купленных телефонов:${model[0]}:$countOneTownTwo\n" +
-                "Число купленных телефонов:${model[1]}:$countTwoTownTwo\n" +
-                "Число купленных телефонов:${model[2]}:$countThreeTownTwo\n" +
-                "Число купленных телефонов:${model[3]}:$countFourTownTwo\n" +
-                "Общая сумма покупок:$countSumTownTwo")
+        println("Магазин в городе: $name\n" +
+                "Число купленных телефонов:\n" +
+                "${model[0].drop(2).take(16)}:$countOneTownTwo\n" +
+                "${model[1].drop(2).take(9)}:$countTwoTownTwo\n" +
+                "${model[2].drop(2).take(13)}:$countThreeTownTwo\n" +
+                "${model[3].drop(2).take(10)}:$countFourTownTwo\n" +
+                "Общая сумма покупок:$countSumTownTwo руб.")
     }
 
     override fun printObjectInfo() {
