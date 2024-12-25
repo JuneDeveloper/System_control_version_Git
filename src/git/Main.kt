@@ -1,9 +1,10 @@
 package git
 
+
 fun main() {
     val firstTown = FirstTown("Ангарск")
     val secondTown = SecondTown("Иркутск")
-    do {
+    loop@do {
         println("Приветствуем Вас в приложении покупки смартфона")
         println("Для продолжения работы выберите пункт:\n1.Продолжить\n2.Выход")
         if (readln().toInt() == 2) {
@@ -13,28 +14,38 @@ fun main() {
             firstTown.printObjectInfo()
             secondTown.printObjectInfo()
             if (readln().toInt() == 1) {
-                println(
-                    "Выберите пункт меню из доступных ниже.." +
-                            "\n1.Посмотреть статистику продаж магазина\n2.Выбрать модель"
-                )
-                if (readln().toInt() == 1) {
-                    firstTown.getInfoMagazine()
-                } else {
-                    firstTown.getModelInfo()
-                    firstTown.getChoise()
+                loop@while (true) {
+                    println(
+                        "Выберите пункт меню из доступных ниже.." +
+                                "\n1.Посмотреть статистику продаж магазина\n2.Выбрать модель"
+                    )
+                    if (readln().toInt() == 1) {
+                        firstTown.getInfoMagazine()
+                        println("Вернуться назад?\n1.Да")
+                        if (readln().toInt() == 1) continue@loop
+                    } else {
+                        firstTown.getModelInfo()
+                        firstTown.getChoise()
+                        break@loop
+                    }
                 }
             } else {
-                println(
-                    "Выберите пункт меню из доступных ниже.." +
-                            "\n1.Посмотреть статистику продаж магазина\n2.Выбрать модель"
-                )
-                if (readln().toInt() == 1) {
-                    secondTown.getInfoMagazine()
-                } else {
-                    secondTown.getModelInfo()
-                    secondTown.getChoise()
+                loop@while (true) {
+                    println(
+                        "Выберите пункт меню из доступных ниже.." +
+                                "\n1.Посмотреть статистику продаж магазина\n2.Выбрать модель"
+                    )
+                    if (readln().toInt() == 1) {
+                        secondTown.getInfoMagazine()
+                        println("Вернуться назад?\n1.Да")
+                        if (readln().toInt() == 1) continue@loop
+                    } else {
+                        secondTown.getModelInfo()
+                        secondTown.getChoise()
+                        break@loop
+                    }
                 }
             }
         }
-    } while (readln() != "dfds")
+    } while (true)
 }

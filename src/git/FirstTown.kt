@@ -40,7 +40,6 @@ class FirstTown(name: String): Town(name),InfoSity {
                 countFour++
                 countSum += 15000
             }
-            else -> println("Вы не выбрали модель из списка.Повторите попытку..")
         }
     }
 
