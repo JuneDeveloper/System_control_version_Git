@@ -1,5 +1,6 @@
 package git
 
-interface infoSity{
+interface InfoSity{
+
     fun printObjectInfo()
 }
